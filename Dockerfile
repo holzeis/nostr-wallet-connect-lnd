@@ -20,6 +20,8 @@ RUN --mount=type=cache,target=/usr/local/cargo,from=rust:latest,source=/usr/loca
 # Runtime image
 FROM debian:bookworm-slim
 
+LABEL org.opencontainers.image.source="https://github.com/holzeis/nostr-wallet-connect-lnd"
+
 RUN apt update && apt install -y openssl pkg-config libc6
 
 # Run as "app" user
