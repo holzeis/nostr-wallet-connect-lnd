@@ -22,7 +22,7 @@ FROM debian:bookworm-slim
 
 LABEL org.opencontainers.image.source="https://github.com/holzeis/nostr-wallet-connect-lnd"
 
-RUN apt update && apt install -y openssl pkg-config libc6
+RUN apt update && apt-get install ca-certificates -y && apt install -y openssl pkg-config libc6
 
 # Run as "app" user
 RUN useradd -ms /bin/bash app
